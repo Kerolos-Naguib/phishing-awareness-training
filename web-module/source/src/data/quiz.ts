@@ -1,0 +1,19 @@
+import { l, L } from "../i18n";
+export interface Q { id: string; q: L; opts: L[]; correct: number; why: L }
+export const QUIZ: Q[] = [
+  { id: "q1", q: l("According to CISA's phishing infographic, how quickly did 84% of employees take the bait after receiving a malicious email?", "وفق إنفوغرافيك CISA عن التصيّد، خلال كم من الوقت وقع 84% من الموظفين في الفخ بعد وصول رسالة خبيثة؟"),
+    opts: [l("After about a week", "بعد نحو أسبوع"), l("Within the first 10 minutes", "خلال أول 10 دقائق"), l("Only after a follow-up reminder", "فقط بعد تذكير لاحق"), l("Never within the first day", "لا يحدث خلال اليوم الأول")], correct: 1,
+    why: l("CISA reports that, within the first 10 minutes of receiving a malicious email, 84% of employees took the bait by replying with sensitive information or interacting with a spoofed link or attachment. Speed matters.", "تذكر CISA أنه خلال أول 10 دقائق من وصول رسالة خبيثة وقع 84% من الموظفين في الفخ، بالرد بمعلومات حسّاسة أو بالتفاعل مع رابط أو مرفق مزيّف. السرعة مهمة.") },
+  { id: "q2", q: l("What share of targeted employees reported the phishing attempt in CISA's assessments?", "ما نسبة الموظفين المستهدفين الذين أبلغوا عن محاولة التصيّد في تقييمات CISA؟"),
+    opts: [l("13%", "13%"), l("50%", "50%"), l("75%", "75%"), l("95%", "95%")], correct: 0,
+    why: l("Only 13% reported. Low reporting limits how quickly an organization can respond and warn others.", "13% فقط أبلغوا. ضعف الإبلاغ يحدّ من سرعة استجابة المؤسسة وتحذيرها للآخرين.") },
+  { id: "q3", q: l("A text says your parcel is on hold and asks you to tap a link to pay a fee. What is the safest first step?", "رسالة نصية تقول إن طردك معلّق وتطلب النقر على رابط لدفع رسوم. ما أول خطوة آمنة؟"),
+    opts: [l("Tap the link to check", "أنقر على الرابط للتأكد"), l("Reply to the sender", "أرد على المرسل"), l("Ignore the link, use the courier's official app or site, then report", "أتجاهل الرابط وأستخدم تطبيق شركة الشحن أو موقعها الرسمي ثم أبلّغ"), l("Forward it to colleagues", "أحوّلها إلى الزملاء")], correct: 2,
+    why: l("The FTC advises against clicking links in unexpected messages and says to contact the company using details you know are real.", "تنصح لجنة التجارة الفيدرالية بعدم النقر على الروابط في الرسائل غير المتوقعة، وبالتواصل مع الشركة عبر وسائل تعرف أنها حقيقية.") },
+  { id: "q4", q: l("According to NIST's Phish Scale, which type of phishing email is hardest to detect?", "وفق مقياس NIST للتصيّد، أي نوع من رسائل التصيّد هو الأصعب اكتشافًا؟"),
+    opts: [l("Many cues, low fit with your work", "علامات كثيرة وملاءمة منخفضة لعملك"), l("Few cues, high fit with your work", "علامات قليلة وملاءمة عالية لعملك"), l("Many cues, high fit with your work", "علامات كثيرة وملاءمة عالية لعملك"), l("Few cues, low fit with your work", "علامات قليلة وملاءمة منخفضة لعملك")], correct: 1,
+    why: l("Fewer cues and a premise that fits the target's work make a phish harder to spot. A polished message that matches your job deserves extra checking.", "العلامات القليلة مع موضوع يلائم عمل المستهدف تجعل الرسالة أصعب اكتشافًا. الرسالة المتقنة المرتبطة بعملك تستحق تحققًا إضافيًا.") },
+  { id: "q5", q: l("A vendor emails new bank details for the next invoice. What do you do?", "مورّد يرسل بريدًا ببيانات بنكية جديدة للفاتورة القادمة. ماذا تفعل؟"),
+    opts: [l("Update the details if the logo looks right", "أحدّث البيانات إذا بدا الشعار صحيحًا"), l("Reply asking if the email is real", "أرد على الرسالة وأسأل إن كانت حقيقية"), l("Verify with a known contact on file and follow approval steps", "أتحقق عبر جهة اتصال معروفة ومسجّلة وأتبع خطوات الموافقة"), l("Pay half now and verify later", "أدفع نصف المبلغ الآن وأتحقق لاحقًا")], correct: 2,
+    why: l("Confirm payment changes through a channel you already trust and use your normal approval process. This is the pattern behind business email compromise.", "أكّد تغييرات الدفع عبر قناة تثق بها مسبقًا واتبع إجراء الموافقة المعتاد. هذا هو نمط اختراق البريد التجاري.") },
+];

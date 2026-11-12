@@ -1,0 +1,12 @@
+{
+  "name": "phishing-awareness-module",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Bilingual (EN/AR) phishing awareness learning module. React + TypeScript, no backend, fully offline.",
+  "scripts": {
+    "build": "node build.cjs",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": { "react": "^19.0.0", "react-dom": "^19.0.0" },
+  "devDependencies": { "@types/react": "^19.0.0", "@types/react-dom": "^19.0.0", "esbuild": "^0.27.7", "typescript": "^5.6.0" }
+}

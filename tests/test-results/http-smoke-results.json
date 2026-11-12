@@ -1,0 +1,44 @@
+{
+ "environment": {
+  "date": "2026-11-09",
+  "playwright": "1.56.0",
+  "note": "local HTTP server under /phishing-awareness-training/; not a GitHub Pages deployment"
+ },
+ "summary": {
+  "total": 6,
+  "passed": 6,
+  "failed": 0
+ },
+ "results": [
+  {
+   "name": "Loads over HTTP from a project sub-path",
+   "status": "PASS",
+   "detail": "HTTP 200"
+  },
+  {
+   "name": "No additional files or external hosts requested (relative paths not needed)",
+   "status": "PASS",
+   "detail": "only index.html was requested"
+  },
+  {
+   "name": "All 8 views open",
+   "status": "PASS",
+   "detail": "8 views"
+  },
+  {
+   "name": "Language switch to Arabic sets RTL",
+   "status": "PASS",
+   "detail": "dir=rtl"
+  },
+  {
+   "name": "Quiz answer gives feedback",
+   "status": "PASS",
+   "detail": "Correct badge shown for the right answer"
+  },
+  {
+   "name": "No console errors or warnings",
+   "status": "PASS",
+   "detail": "0 issues"
+  }
+ ]
+}

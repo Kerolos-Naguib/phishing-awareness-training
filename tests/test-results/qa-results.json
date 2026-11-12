@@ -1,0 +1,449 @@
+{
+ "environment": {
+  "date": "2026-11-09",
+  "playwright": "1.56.0",
+  "browser": "Chromium 141.0.7390.37",
+  "node": "v22.22.2",
+  "platform": "linux x64",
+  "file": "index.html"
+ },
+ "summary": {
+  "total": 54,
+  "passed": 54,
+  "failed": 0
+ },
+ "results": [
+  {
+   "id": "NAV-01",
+   "area": "Navigation",
+   "name": "Each of the 8 sidebar items opens its view",
+   "expected": "h1 matches the module and aria-current moves to the item",
+   "actual": "8/8 views opened with correct heading",
+   "status": "PASS"
+  },
+  {
+   "id": "NAV-02",
+   "area": "Navigation",
+   "name": "Dashboard buttons and queue buttons route correctly",
+   "expected": "Start training->Email lab; queue Start buttons->their lab; 'I think I clicked'->Incident guide",
+   "actual": "6/6 dashboard buttons routed correctly",
+   "status": "PASS"
+  },
+  {
+   "id": "NAV-03",
+   "area": "Navigation",
+   "name": "'Next' buttons chain through the learning path",
+   "expected": "Email->Website->Social->Quiz; Social last->Quiz; hash updates",
+   "actual": "Next chain works; hash=#/..",
+   "status": "PASS"
+  },
+  {
+   "id": "NAV-04",
+   "area": "Navigation",
+   "name": "Deep link and hash change open the right view",
+   "expected": "Loading #/results shows Your results; changing hash to #/quiz switches view",
+   "actual": "deep link + hashchange OK",
+   "status": "PASS"
+  },
+  {
+   "id": "LANG-01",
+   "area": "Language",
+   "name": "Switch EN->AR->EN updates lang, dir, title and nav labels",
+   "expected": "html lang/dir flip; labels translate; title translates",
+   "actual": "lang/dir/title/labels switch both ways",
+   "status": "PASS"
+  },
+  {
+   "id": "LANG-02",
+   "area": "Language",
+   "name": "Language choice persists after reload",
+   "expected": "Arabic still active after page reload",
+   "actual": "persisted",
+   "status": "PASS"
+  },
+  {
+   "id": "LANG-03",
+   "area": "Language",
+   "name": "Every view has an Arabic heading",
+   "expected": "8 Arabic h1 values match",
+   "actual": "8/8 Arabic headings",
+   "status": "PASS"
+  },
+  {
+   "id": "LANG-04",
+   "area": "Language",
+   "name": "No untranslated English UI text in Arabic mode (all views, incl. feedback states)",
+   "expected": "Only brand names, acronyms, addresses and source titles remain Latin",
+   "actual": "no leftovers",
+   "status": "PASS"
+  },
+  {
+   "id": "RTL-01",
+   "area": "Arabic RTL",
+   "name": "Layout mirrors: sidebar on the right, number nodes right of labels, text aligned right",
+   "expected": "rail.left > main.left; node.x > label.x; heading text-align resolves to right",
+   "actual": "mirrored correctly",
+   "status": "PASS"
+  },
+  {
+   "id": "RTL-02",
+   "area": "Arabic RTL",
+   "name": "Addresses/emails stay left-to-right inside Arabic text; arrows flip",
+   "expected": "bdi.ltr computed direction ltr; .ic.flip has scaleX(-1)",
+   "actual": "ltr spans=3, arrow mirrored",
+   "status": "PASS"
+  },
+  {
+   "id": "RTL-03",
+   "area": "Arabic RTL",
+   "name": "Arabic mode has no horizontal overflow on any view (desktop and mobile)",
+   "expected": "scrollWidth <= viewport width on 8 views x 2 viewports",
+   "actual": "no overflow",
+   "status": "PASS"
+  },
+  {
+   "id": "EMAIL-01",
+   "area": "Email lab",
+   "name": "Clicking each suspicious element marks it found, explains it and updates the counter/meter",
+   "expected": "Per email 4/4/3 found; badge 'Warning sign'; meter aria-valuenow = %; ledger shows titles",
+   "actual": "11/11 found; per-email completion shown",
+   "status": "PASS"
+  },
+  {
+   "id": "EMAIL-02",
+   "area": "Email lab",
+   "name": "Normal elements are labelled 'Not a warning sign' and do not count; repeat clicks do not double count",
+   "expected": "found stays same; neutral explained; double click no change",
+   "actual": "neutral not counted; no double count",
+   "status": "PASS"
+  },
+  {
+   "id": "EMAIL-03",
+   "area": "Email lab",
+   "name": "Switching email resets selection; restart clears the lab; link/attachment elements are clickable",
+   "expected": "prompt shown after tab switch; Restart->0/11",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "EMAIL-04",
+   "area": "Email lab",
+   "name": "Arabic explanations are shown in Arabic",
+   "expected": "explanation heading contains Arabic letters",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "WEB-01",
+   "area": "Website lab",
+   "name": "Correct answers for all 5 rounds are accepted and scored 5/5",
+   "expected": "'Correct' badge each round; sidebar 5/5; 'Correct on first try: 5 of 5'",
+   "actual": "5/5",
+   "status": "PASS"
+  },
+  {
+   "id": "WEB-02",
+   "area": "Website lab",
+   "name": "Wrong answers are rejected with explanation (wrong segment; 'genuine' on a fake; segment on a genuine)",
+   "expected": "'Not quite' badge, culprit revealed, tally excludes them",
+   "actual": "3/3 wrong answers rejected",
+   "status": "PASS"
+  },
+  {
+   "id": "WEB-03",
+   "area": "Website lab",
+   "name": "Answers lock after the first attempt (no score farming)",
+   "expected": "Segments disabled; a second click cannot change result",
+   "actual": "locked",
+   "status": "PASS"
+  },
+  {
+   "id": "WEB-04",
+   "area": "Website lab",
+   "name": "Restart lab clears results",
+   "expected": "After 5 answers, Restart resets to 0/5",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "SOC-01",
+   "area": "Social engineering",
+   "name": "All 9 decisions give the right severity, points and consequence",
+   "expected": "unsafe 0/2, partial 1/2, safe 2/2; outcome+lesson shown; options lock",
+   "actual": "9/9 decisions correct",
+   "status": "PASS"
+  },
+  {
+   "id": "SOC-02",
+   "area": "Social engineering",
+   "name": "Social progress tracks completion and restart clears it",
+   "expected": "3/3 after all scenarios; restart -> 0/3",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "QUIZ-01",
+   "area": "Quiz",
+   "name": "Immediate feedback: correct answer highlighted, wrong pick flagged, explanation shown, options lock",
+   "expected": "Correct->'Correct'; Wrong->'Not quite' + correct option marked; Next only after answering",
+   "actual": "feedback correct",
+   "status": "PASS"
+  },
+  {
+   "id": "QUIZ-02",
+   "area": "Quiz",
+   "name": "Scoring: all-correct=5/5, all-wrong=0/5, mixed=exact count, recap marks per question",
+   "expected": "Score matches answers",
+   "actual": "5/5, 0/5, 3/5 verified",
+   "status": "PASS"
+  },
+  {
+   "id": "QUIZ-03",
+   "area": "Quiz",
+   "name": "Verdict wording matches score band",
+   "expected": "5/5 and 3/5 and 0/5 show different verdicts",
+   "actual": "3 distinct verdicts",
+   "status": "PASS"
+  },
+  {
+   "id": "QUIZ-04",
+   "area": "Retake",
+   "name": "Retake clears answers, returns to Q1, and resets sidebar/results",
+   "expected": "Question 1 of 5; sidebar 0/5; results quiz 0/5; can score again",
+   "actual": "retake works and rescored",
+   "status": "PASS"
+  },
+  {
+   "id": "QUIZ-05",
+   "area": "Quiz",
+   "name": "Leaving mid-quiz and returning resumes at the next unanswered question",
+   "expected": "After 2 answers, returning shows Question 3 of 5",
+   "actual": "resumed",
+   "status": "PASS"
+  },
+  {
+   "id": "RES-01",
+   "area": "Final score",
+   "name": "Perfect run via the UI = 100% and 'Excellent'",
+   "expected": "100 + verdict",
+   "actual": "100%",
+   "status": "PASS"
+  },
+  {
+   "id": "RES-02",
+   "area": "Final score",
+   "name": "Mixed run matches the formula (email 11/11, web 4/5, social 5/6, quiz 3/5 => 81%)",
+   "expected": "(1+0.8+0.8333+0.6)/4 = 81%",
+   "actual": "81% with per-skill 11/11, 4/5, 5/6, 3/5",
+   "status": "PASS"
+  },
+  {
+   "id": "RES-03",
+   "area": "Final score",
+   "name": "Partial progress: only emails done = 25%, labelled in-progress, others 'Not started'",
+   "expected": "25 + In progress + 3 'Not started'",
+   "actual": "25%",
+   "status": "PASS"
+  },
+  {
+   "id": "RES-04",
+   "area": "Final score",
+   "name": "Reset all progress: Cancel keeps data, OK clears everything",
+   "expected": "dialog dismiss -> unchanged; accept -> 0%, labs 0",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "PERSIST-01",
+   "area": "Reset on refresh",
+   "name": "Refreshing the page resets ALL progress to zero (sidebar stats, Overall progress, results)",
+   "expected": "After finishing the quiz + emails then reload: every sidebar stat 0, Overall progress 0%, results 0%",
+   "actual": "everything back to 0 after reload",
+   "status": "PASS"
+  },
+  {
+   "id": "PERSIST-02",
+   "area": "Reset on refresh",
+   "name": "Only the language is stored; old saved progress from the previous version is ignored",
+   "expected": "localStorage holds {lang} only; seeded old progress does not load",
+   "actual": "stored = lang only",
+   "status": "PASS"
+  },
+  {
+   "id": "PERSIST-03",
+   "area": "Reset on refresh",
+   "name": "Language choice still survives a refresh while progress resets",
+   "expected": "Arabic stays after reload; progress 0",
+   "actual": "language kept, progress reset",
+   "status": "PASS"
+  },
+  {
+   "id": "INC-01",
+   "area": "Incident guide",
+   "name": "Four situations switch; checklist toggles, counts and persists per step",
+   "expected": "chips change steps; checking updates counter/meter; unchecking reverts",
+   "actual": "OK, steps=4,3,4,3",
+   "status": "PASS"
+  },
+  {
+   "id": "REF-01",
+   "area": "References",
+   "name": "11 reference links, https, open in new tab with noopener",
+   "expected": "11 anchors https target=_blank rel contains noopener",
+   "actual": "11 links OK",
+   "status": "PASS"
+  },
+  {
+   "id": "SEC-01",
+   "area": "Privacy/security",
+   "name": "No text/password/credential inputs on any view; no forms",
+   "expected": "Only checkbox inputs (incident guide); 0 <form>",
+   "actual": "no credential inputs",
+   "status": "PASS"
+  },
+  {
+   "id": "DOM-01",
+   "area": "Privacy/security",
+   "name": "All example domains end in .test or .invalid (outside the References page)",
+   "expected": "No other TLD in lab/scenario/quiz text, EN and AR",
+   "actual": "13 hosts checked, all .test/.invalid (or file names)",
+   "status": "PASS"
+  },
+  {
+   "id": "RESP-01",
+   "area": "Responsive desktop",
+   "name": "Desktop 1440/1024: persistent sidebar visible, top bar hidden, no overflow on any view",
+   "expected": "rail x=0 width~288; .topbar display none",
+   "actual": "OK at 1440 and 1024",
+   "status": "PASS"
+  },
+  {
+   "id": "RESP-02",
+   "area": "Responsive mobile",
+   "name": "Tablet 768 / phone 390 / small phone 360: top bar shown, sidebar hidden, no overflow in EN or AR",
+   "expected": "scrollWidth<=width on 8 views; rail off-screen",
+   "actual": "6 viewport/lang combos x 8 views, no overflow",
+   "status": "PASS"
+  },
+  {
+   "id": "RESP-03",
+   "area": "Responsive mobile",
+   "name": "Mobile menu: opens, navigates and closes; scrim closes; language switch works in top bar",
+   "expected": "aria-expanded toggles; item click navigates+closes; scrim click closes",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "RESP-04",
+   "area": "Responsive mobile",
+   "name": "Touch targets: primary controls >= 44px tall on mobile; others >= 24px",
+   "expected": "btn/opt/tab/chip/iconbtn/navitem >=44; dots/small btn >=24",
+   "actual": "all targets large enough",
+   "status": "PASS"
+  },
+  {
+   "id": "KEY-01",
+   "area": "Keyboard",
+   "name": "Skip link is first Tab stop and moves focus to main content",
+   "expected": "first Tab -> 'Skip to content'; Enter -> activeElement#main",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "KEY-02",
+   "area": "Keyboard",
+   "name": "Sidebar can be operated by keyboard and shows a visible focus ring",
+   "expected": "focus nav item, Enter navigates, outline visible (>=2px, not none)",
+   "actual": "ring 2px",
+   "status": "PASS"
+  },
+  {
+   "id": "KEY-03",
+   "area": "Keyboard",
+   "name": "Email hotspots work with Enter/Space and keep focus after activation",
+   "expected": "Enter marks found; activeElement stays on the same hotspot",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "KEY-04",
+   "area": "Keyboard",
+   "name": "Language buttons keep focus after toggling by keyboard",
+   "expected": "Enter on العربية: activeElement is still a language button; aria-pressed updates",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "KEY-05",
+   "area": "Keyboard",
+   "name": "Website lab, social and quiz can be completed using only the keyboard",
+   "expected": "Enter selects; feedback appears",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "KEY-06",
+   "area": "Keyboard",
+   "name": "Mobile: hidden sidebar is not reachable by Tab while closed; Escape closes the open menu",
+   "expected": "20 Tab presses never land off-screen; Esc closes",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "KEY-07",
+   "area": "Keyboard",
+   "name": "Focus moves to the new view after navigation (screen reader / keyboard users)",
+   "expected": "After choosing a nav item, activeElement is main or inside main",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "A11Y-01",
+   "area": "Accessibility",
+   "name": "Landmarks, single h1, named controls, aria-live feedback, progressbar semantics",
+   "expected": "main/nav/aside present; 1 h1 per view; every button/link has an accessible name; live regions exist",
+   "actual": "OK",
+   "status": "PASS"
+  },
+  {
+   "id": "A11Y-02",
+   "area": "Accessibility",
+   "name": "Text contrast >= 4.5:1 (3:1 for large text) across views and feedback states",
+   "expected": "0 failing text elements (disabled controls exempt)",
+   "actual": "no contrast failures",
+   "status": "PASS"
+  },
+  {
+   "id": "OFF-01",
+   "area": "Offline",
+   "name": "Standalone file contains no external references (scripts, styles, fonts, images, imports)",
+   "expected": "no <script src>, <link href>, @import, url(http), src=http",
+   "actual": "self-contained, 330 KB, CSP present",
+   "status": "PASS"
+  },
+  {
+   "id": "OFF-02",
+   "area": "Offline",
+   "name": "Full journey works with the network disabled and every http(s) request aborted",
+   "expected": "0 outbound requests, 0 failed requests, all views and interactions work",
+   "actual": "journey + AR + reload OK offline, 0 outbound requests",
+   "status": "PASS"
+  },
+  {
+   "id": "OFF-03",
+   "area": "Offline",
+   "name": "CSP blocks network calls from the page (fetch/XHR/image beacons)",
+   "expected": "fetch('https://example.com') rejects",
+   "actual": "fetch blocked by CSP",
+   "status": "PASS"
+  },
+  {
+   "id": "CON-01",
+   "area": "Console",
+   "name": "No console errors/warnings or uncaught exceptions during the whole suite (EN, AR, desktop, mobile, offline)",
+   "expected": "0 issues",
+   "actual": "0 console issues, 0 external requests",
+   "status": "PASS"
+  }
+ ]
+}

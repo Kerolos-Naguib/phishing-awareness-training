@@ -1,0 +1,54 @@
+{
+ "summary": {
+  "total": 9,
+  "passed": 9,
+  "failed": 0
+ },
+ "results": [
+  {
+   "check": "Palette: 6 core colors in deck theme and HTML CSS",
+   "status": "PASS",
+   "detail": "missing in deck=[] html=[]"
+  },
+  {
+   "check": "Typography: deck theme font equals first HTML font",
+   "status": "PASS",
+   "detail": "deck={'Calibri'} html-first=Calibri"
+  },
+  {
+   "check": "Quiz parity: 5 questions, options and correct answers identical in deck and HTML",
+   "status": "PASS",
+   "detail": "5/5 identical"
+  },
+  {
+   "check": "Arabic speaker notes: all 18 slides present, >=300 chars, mostly Arabic",
+   "status": "PASS",
+   "detail": "18/18 complete"
+  },
+  {
+   "check": "No placeholder text (deck text, notes, alt text, HTML source)",
+   "status": "PASS",
+   "detail": "none found"
+  },
+  {
+   "check": "Reference lists identical (deck hyperlinks vs HTML references)",
+   "status": "PASS",
+   "detail": "deck=11 html=11 only_deck=[] only_html=[]"
+  },
+  {
+   "check": "Key statistics present in both (84%, 13%, $120M, 60 months)",
+   "status": "PASS",
+   "detail": "consistent"
+  },
+  {
+   "check": "Corrected claims: no unsupported wording remains",
+   "status": "PASS",
+   "detail": "none"
+  },
+  {
+   "check": "Deck example domains use only .test/.invalid (real reporting/source names excluded)",
+   "status": "PASS",
+   "detail": "example domains=['nile-logistics-it.invalid', 'nilelogistics.test'] unexpected=[]"
+  }
+ ]
+}

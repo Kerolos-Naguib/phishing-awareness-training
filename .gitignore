@@ -1,0 +1,36 @@
+# Dependencies and build output
+node_modules/
+web-module/source/dist/
+web-module/source/node_modules/
+
+# Logs and caches
+*.log
+npm-debug.log*
+.npm/
+.cache/
+coverage/
+
+# Local environment and secrets (never commit)
+.env
+.env.*
+*.pem
+*.key
+
+# Test artifacts that are large or regenerated (the JSON result files in tests/test-results/ are kept)
+playwright-report/
+test-results/*.png
+test-results/*.webm
+test-results/*.zip
+tests/test-results/*.png
+tests/test-results/*.webm
+tests/test-results/*.zip
+
+# Editor and OS files
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+Thumbs.db
+desktop.ini
+~$*.pptx
